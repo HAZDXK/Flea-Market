@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.shanzhu.st</groupId>
-    <artifactId>school-trade-backend</artifactId>
+    <artifactId>Flea-Market-backend</artifactId>
     <version>1.0.0</version>
-    <name>school-trade-backend</name>
-    <description>二手物品交易平台</description>
+    <name>Flea-Market-backend</name>
+    <description>山东师范大学 跳蚤市场</description>
 
     <properties>
         <java.version>1.8</java.version>

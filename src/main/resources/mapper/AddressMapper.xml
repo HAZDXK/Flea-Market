@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="trade.mapper.AddressMapper">
+<mapper namespace="com.Market.Flea.mapper.AddressMapper">
 
-  <resultMap id="BaseResultMap" type="trade.entity.Address">
+  <resultMap id="BaseResultMap" type="com.Market.Flea.entity.Address">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="consignee_name" jdbcType="VARCHAR" property="consigneeName" />
     <result column="consignee_phone" jdbcType="VARCHAR" property="consigneePhone" />
@@ -46,7 +46,7 @@
     where id = #{id,jdbcType=BIGINT} and user_id = #{userId,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="trade.entity.Address" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Address" useGeneratedKeys="true">
     insert into sh_address (consignee_name, consignee_phone, province_name, 
       city_name, region_name, detail_address, 
       default_flag, user_id)
@@ -55,7 +55,7 @@
       #{defaultFlag,jdbcType=TINYINT}, #{userId,jdbcType=BIGINT})
   </insert>
 
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="trade.entity.Address" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Address" useGeneratedKeys="true">
     insert into sh_address
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="consigneeName != null">
@@ -111,7 +111,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="trade.entity.Address">
+  <update id="updateByPrimaryKeySelective" parameterType="com.Market.Flea.entity.Address">
     update sh_address
     <set>
       <if test="consigneeName != null">
@@ -142,7 +142,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <update id="updateByUserIdSelective" parameterType="trade.entity.Address">
+  <update id="updateByUserIdSelective" parameterType="com.Market.Flea.entity.Address">
     update sh_address
     <set>
       <if test="consigneeName != null">
@@ -170,7 +170,7 @@
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
 
-  <update id="updateByPrimaryKey" parameterType="trade.entity.Address">
+  <update id="updateByPrimaryKey" parameterType="com.Market.Flea.entity.Address">
     update sh_address
     set consignee_name = #{consigneeName,jdbcType=VARCHAR},
       consignee_phone = #{consigneePhone,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="trade.mapper.FavoriteMapper">
-  <resultMap id="BaseResultMap" type="trade.entity.Favorite">
+<mapper namespace="com.Market.Flea.mapper.FavoriteMapper">
+  <resultMap id="BaseResultMap" type="com.Market.Flea.entity.Favorite">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
@@ -31,13 +31,13 @@
     delete from sh_favorite
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="trade.entity.Favorite" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Favorite" useGeneratedKeys="true">
     insert into sh_favorite (create_time, user_id, idle_id
       )
     values (#{createTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=BIGINT}, #{idleId,jdbcType=BIGINT}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="trade.entity.Favorite" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Favorite" useGeneratedKeys="true">
     insert into sh_favorite
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="createTime != null">
@@ -62,7 +62,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="trade.entity.Favorite">
+  <update id="updateByPrimaryKeySelective" parameterType="com.Market.Flea.entity.Favorite">
     update sh_favorite
     <set>
       <if test="createTime != null">
@@ -77,7 +77,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="trade.entity.Favorite">
+  <update id="updateByPrimaryKey" parameterType="com.Market.Flea.entity.Favorite">
     update sh_favorite
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       user_id = #{userId,jdbcType=BIGINT},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="trade.mapper.MessageMapper">
-  <resultMap id="BaseResultMap" type="trade.entity.Message">
+<mapper namespace="com.Market.Flea.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.Market.Flea.entity.Message">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="idle_id" jdbcType="BIGINT" property="idleId" />
@@ -35,7 +35,7 @@
     delete from sh_message
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="trade.entity.Message" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Message" useGeneratedKeys="true">
     insert into sh_message (user_id, idle_id, content, 
       create_time, to_user, to_message
       )
@@ -43,7 +43,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{toUser,jdbcType=BIGINT}, #{toMessage,jdbcType=BIGINT}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="trade.entity.Message" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.Message" useGeneratedKeys="true">
     insert into sh_message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -86,7 +86,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="trade.entity.Message">
+  <update id="updateByPrimaryKeySelective" parameterType="com.Market.Flea.entity.Message">
     update sh_message
     <set>
       <if test="userId != null">
@@ -110,7 +110,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="trade.entity.Message">
+  <update id="updateByPrimaryKey" parameterType="com.Market.Flea.entity.Message">
     update sh_message
     set user_id = #{userId,jdbcType=BIGINT},
       idle_id = #{idleId,jdbcType=BIGINT},

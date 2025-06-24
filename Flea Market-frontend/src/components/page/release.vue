@@ -5,7 +5,7 @@
             <div class="release-idle-container">
                 <div class="release-idle-container-title">物品发布</div>
                 <div class="release-idle-container-form">
-                    <el-input placeholder="请输入二手物品名称" v-model="idleItemInfo.idleName"
+                    <el-input placeholder="请输入商品名称" v-model="idleItemInfo.idleName"
                               maxlength="30"
                               show-word-limit>
                     </el-input>
@@ -49,7 +49,7 @@
 
                     </div>
                     <div class="release-idle-container-picture">
-                        <div class="release-idle-container-picture-title">上传二手物品照片</div>
+                        <div class="release-idle-container-picture-title">上传商品照片</div>
                         <el-upload
                                 action="http://localhost:8080/file/"
                                 :on-preview="fileHandlePreview"

@@ -2,7 +2,7 @@
 spring:
   #数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/DB_School_trade?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/Flea_Market?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 88888888
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -24,6 +24,6 @@ userFilePath: F://Flea Market//images
 
 #Mybatis配置
 mybatis:
-  typeAliasesPackage: icu.spring.school.trade.entity
+  typeAliasesPackage: com.Market.Flea.entity
   mapperLocations: classpath:mapper/*.xml
 

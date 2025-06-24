@@ -13,7 +13,7 @@
             </el-table-column>
             <el-table-column
                     prop="idleItem.idleName"
-                    label="二手物品名称"
+                    label="商品名称"
                     show-overflow-tooltip
                     >
             </el-table-column>

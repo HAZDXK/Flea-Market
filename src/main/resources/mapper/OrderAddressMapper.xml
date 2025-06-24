@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="trade.mapper.OrderAddressMapper">
-  <resultMap id="BaseResultMap" type="trade.entity.OrderAddress">
+<mapper namespace="com.Market.Flea.mapper.OrderAddressMapper">
+  <resultMap id="BaseResultMap" type="com.Market.Flea.entity.OrderAddress">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="order_id" jdbcType="BIGINT" property="orderId" />
     <result column="consignee_name" jdbcType="VARCHAR" property="consigneeName" />
@@ -27,13 +27,13 @@
     delete from sh_order_address
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="trade.entity.OrderAddress" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.OrderAddress" useGeneratedKeys="true">
     insert into sh_order_address (order_id, consignee_name, consignee_phone,
       detail_address)
     values (#{orderId,jdbcType=BIGINT}, #{consigneeName,jdbcType=VARCHAR}, #{consigneePhone,jdbcType=VARCHAR},
       #{detailAddress,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="trade.entity.OrderAddress" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.Market.Flea.entity.OrderAddress" useGeneratedKeys="true">
     insert into sh_order_address
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="trade.entity.OrderAddress">
+  <update id="updateByPrimaryKeySelective" parameterType="com.Market.Flea.entity.OrderAddress">
     update sh_order_address
     <set>
       <if test="orderId != null">
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="trade.entity.OrderAddress">
+  <update id="updateByPrimaryKey" parameterType="com.Market.Flea.entity.OrderAddress">
     update sh_order_address
     set order_id = #{orderId,jdbcType=BIGINT},
       consignee_name = #{consigneeName,jdbcType=VARCHAR},

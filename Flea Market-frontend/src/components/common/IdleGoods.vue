@@ -1,8 +1,8 @@
 <template>
     <div class="main-border">
         <el-menu default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-menu-item index="1">上线的二手物品</el-menu-item>
-            <el-menu-item index="2">下架的二手物品</el-menu-item>
+            <el-menu-item index="1">上线的商品</el-menu-item>
+            <el-menu-item index="2">下架的商品</el-menu-item>
         </el-menu>
         <el-table v-if="this.mode == 1"
                 :data="onlineGoods"
@@ -15,7 +15,7 @@
             </el-table-column>
             <el-table-column
                     prop="idleName"
-                    label="二手物品名称"
+                    label="商品名称"
                     show-overflow-tooltip
                     >
             </el-table-column>
@@ -53,7 +53,7 @@
             </el-table-column>
             <el-table-column
                     prop="idleName"
-                    label="二手物品名称"
+                    label="商品名称"
                     show-overflow-tooltip
             >
             </el-table-column>
